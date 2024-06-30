@@ -1,13 +1,12 @@
 import Movie from "../../components/movie";
+import { API_URL } from "../../constants";
 import styles from "../../styles/home.module.css";
 
 export const metadata = {
   title: "Home",
 };
 
-export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
-
-export async function getMovies() {
+async function getMovies() {
   const response = await fetch(API_URL);
   const json = await response.json();
   return json;
